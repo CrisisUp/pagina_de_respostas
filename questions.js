@@ -2,6 +2,68 @@ const questions = [
   {
     week: 1,
     subject: "Física do Movimento",
+    context: "A determinação de grandes distâncias na Terra e no espaço tem sido um desafio para cientistas ao longo da história. Um dos primeiros métodos eficazes para esse fim foi a triangulação, técnica utilizada por Eratóstenes no século III a.C. para estimar a circunferência da Terra. Ele observou que, no solstício de verão, ao meio-dia, os raios solares incidiam verticalmente sobre Siena (atual Aswan), enquanto em Alexandria, localizada ao norte no mesmo meridiano, formavam um ângulo <strong>&theta; = 7,2&deg;</strong> com a vertical. Conhecendo a distância de <strong>5000 estádios</strong> entre a cidade, ele conseguiu estimar a circunferência da Terra.",
+    questionText: `Com base nessa técnica, analise as afirmativas a seguir:
+    <br><br>
+    <strong>I.</strong> A circunferência da Terra estimada por Eratóstenes, considerando a conversão moderna de <strong>1 estádio &approx; 157 metros</strong>, equivale aproximadamente a <strong>39.250 km</strong>, um valor muito próximo do real.
+    <br>
+    <strong>II.</strong> Se um cientista tentasse repetir esse experimento em um planeta com o dobro do raio da Terra, mas mantendo o mesmo ângulo de <strong>7,2&deg;</strong> e a mesma distância <strong>s = 5000 estádios</strong>, ele obteria um valor incorreto para a circunferência, pois o método depende diretamente do raio do planeta.
+    <br>
+    <strong>III.</strong> A técnica de triangulação utilizada por Eratóstenes pode ser aplicada a qualquer corpo celeste, desde que seja possível medir a distância entre dois pontos e o ângulo dos raios solares em relação à vertical nesses locais.
+    <br>
+    <strong>IV.</strong> Se a cidade de Alexandria estivesse <strong>10.000 estádios</strong> ao norte de Siena e o mesmo método fosse aplicado, o ângulo medido deveria ser <strong>14,4&deg;</strong>, pois há uma relação linear entre a distância percorrida sobre a superfície e o ângulo medido.
+    <br><br>
+    É correto o que se afirma em:`,
+    options: [
+      { letter: "A", text: "I, III e IV, apenas.", isCorrect: false },
+      { letter: "B", text: "II e IV, apenas.", isCorrect: false },
+      { letter: "C", text: "I, apenas.", isCorrect: false },
+      { letter: "D", text: "I, II e III, apenas.", isCorrect: false },
+      { letter: "E", text: "I e III, apenas.", isCorrect: true }
+    ],
+    correctExplanation: `
+      <p>A afirmativa <strong>I</strong> está correta, pois Eratóstenes utilizou a relação entre a distância percorrida na superfície e o ângulo medido para estimar a circunferência da Terra. Considerando a conversão de 1 estádio &approx; 157 metros, a distância entre Siena e Alexandria (5000 estádios) corresponde a aproximadamente 785 **km**. Aplicando a regra de três baseada na proporção angular (7,2&deg; para 785 **km**), obtém-se uma circunferência de aproximadamente 39.250 **km**, um valor muito próximo do real (40.075 **km**), com um erro inferior a 3%. Vejamos: <strong>C = (s &times; 360&deg;) / &theta; = (5000 &times; 360) / 7,2 = 250.000 estádios</strong>. Convertendo para metros: <strong>C = 250.000 &times; 157 = 39.250 **km**</strong>.</p>
+      
+      <p>A afirmativa <strong>III</strong> está correta, pois o método de triangulação é amplamente utilizado na astronomia para determinar distâncias de planetas e estrelas. Um exemplo moderno é a medição da distância Terra-Lua usando lasers refletidos na superfície lunar. Além disso, a triangulação é empregada na paralaxe estelar para medir distâncias de estrelas próximas com base no deslocamento aparente causado pela posição da Terra em sua órbita.</p>
+      <p class="final-answer">A resposta correta é: I e III, apenas.</p>
+    `,
+    incorrectExplanations: `
+      <h4 class="incorrect-title">As demais alternativas estão incorretas:</h4>
+      <p>A afirmativa <strong>II</strong> está incorreta, pois o método de Eratóstenes se baseia na razão entre o arco percorrido e o ângulo medido. Se o planeta tivesse o dobro do raio da Terra e a distância percorrida continuasse a mesma, o ângulo observado seria menor. Como o método utiliza essa relação para calcular a circunferência, o valor obtido ainda estaria correto, pois o cálculo levaria naturalmente em conta o novo raio do planeta.</p>
+      <p>A afirmativa <strong>IV</strong> está incorreta, pois a relação entre a distância percorrida e o ângulo medido não é linear. Como a Terra é uma esfera, o ângulo entre os raios solares e a vertical em diferentes pontos da superfície segue uma relação trigonométrica baseada na circunferência do planeta. Assim, dobrar a distância percorrida sobre a superfície não implica dobrar o ângulo medido, sendo necessário utilizar funções trigonométricas para obter o novo valor corretamente.</p>
+    `
+  },
+  {
+    week: 1,
+    subject: "Física do Movimento",
+    context: "Na realização de experimentos científicos e medições técnicas, a precisão dos instrumentos utilizados desempenha um papel fundamental na confiabilidade dos resultados obtidos. Diferentes ferramentas de medição possuem variações na incerteza associada, o que influencia diretamente a forma como os valores devem ser reportados e tratados em cálculos.<br><br>Um pesquisador mediu a espessura de uma capa de livro utilizando três instrumentos diferentes, obtendo os seguintes valores:<br>• Com régua comum: 3,0 &plusmn; 0,1 **mm**<br>• Com paquímetro: 3,00 &plusmn; 0,01 **mm**<br>• Com micrômetro: 3,000 &plusmn; 0,001 **mm**<br><br>Com base nessas medições e nas regras de propagação de incerteza, observe as afirmativas a seguir:",
+    questionText: `I. A incerteza da medição está diretamente relacionada à precisão do instrumento utilizado. Quanto menor a incerteza, maior a precisão da medida.<br>
+    II. A medição realizada com o micrômetro é mais precisa do que a realizada com a régua, pois apresenta uma menor incerteza e um maior número de algarismos significativos.<br>
+    III. Na soma de duas medições com diferentes incertezas, o resultado deve ter a mesma incerteza do número de menor precisão.<br>
+    IV. Na subtração de dois valores medidos com diferentes incertezas, o número de casas decimais no resultado final deve ser o mesmo da medida com menor precisão.<br><br>
+    É correto o que se afirma em:`,
+    options: [
+      { letter: "A", text: "I, apenas.", isCorrect: false },
+      { letter: "B", text: "I e II, apenas.", isCorrect: false },
+      { letter: "C", text: "I, III e IV, apenas.", isCorrect: false },
+      { letter: "D", text: "II e IV, apenas.", isCorrect: false },
+      { letter: "E", text: "I, II e III, apenas.", isCorrect: true }
+    ],
+    correctExplanation: `
+      <p>A alternativa "I, II e III, apenas." está correta, pois:</p>
+      <p>A afirmativa <strong>I</strong> é correta, pois a incerteza de um instrumento está diretamente ligada à sua precisão. Quanto menor a incerteza associada à medição, mais confiável e precisa será a medida obtida. No caso dos instrumentos usados, a régua apresenta a maior incerteza (&plusmn;0,1 **mm**), o paquímetro uma incerteza intermediária (&plusmn;0,01 **mm**) e o micrômetro a menor incerteza (&plusmn;0,001 **mm**), indicando que o micrômetro é o mais preciso.</p>
+      <p>A afirmativa <strong>II</strong> é correta, pois a medição realizada com o micrômetro possui mais algarismos significativos e uma incerteza menor, garantindo uma leitura mais detalhada e confiável. O número de algarismos significativos é um indicativo de precisão, pois reflete a capacidade do instrumento de fornecer valores mais refinados. Comparando com a régua, que fornece valores arredondados a uma casa decimal, o micrômetro permite medições até três casas decimais, evidenciando sua superioridade em precisão.</p>
+      <p>A afirmativa <strong>III</strong> é correta, pois na soma de medidas com diferentes incertezas, o resultado final deve manter a mesma incerteza do número de menor precisão. A soma de medições com diferentes graus de precisão não pode resultar em um valor mais preciso do que o menos preciso dos números envolvidos. Assim, ao somar um valor medido com a régua (&plusmn;0,1 **mm**) com um valor do micrômetro (&plusmn;0,001 **mm**), o resultado final terá uma incerteza de &plusmn; 0,1 **mm**, pois este é o valor com menor precisão.</p>
+      <p class="final-answer">A resposta correta é: I, II e III, apenas.</p>
+    `,
+    incorrectExplanations: `
+      <h4 class="incorrect-title">As demais alternativas estão incorretas:</h4>
+      <p>A afirmativa <strong>IV</strong> é incorreta, pois a regra para subtração de medidas com diferentes incertezas segue o mesmo princípio da soma: o resultado deve ser arredondado de acordo com a menor precisão entre as medidas envolvidas, mas não se baseia diretamente no número de casas decimais, e sim na incerteza absoluta. Se um valor tem incerteza &plusmn;0,1 **mm** e outro tem &plusmn;0,001 **mm**, a incerteza final será ditada pela maior dessas incertezas, independentemente do número de casas decimais dos números envolvidos.</p>
+    `
+  },
+  {
+    week: 1,
+    subject: "Física do Movimento",
     context: "Em um experimento científico, um pesquisador mede duas grandezas físicas utilizando instrumentos com diferentes níveis de precisão. Para garantir que seus resultados sigam as regras de propagação de incertezas, ele precisa considerar corretamente os algarismos significativos ao apresentar o valor final.",
     questionText: "Com base nesse contexto, assinale a alternativa que contém a regra que determina a quantidade correta de casas decimais no resultado de uma soma ou subtração de medidas experimentais.",
     options: [
@@ -92,6 +154,41 @@ const questions = [
       <h4 class="incorrect-title">As demais alternativas estão incorretas:</h4>
 
       <p>A afirmativa <strong>III</strong> é incorreta, pois a relatividade restrita estabelece que nenhum objeto com massa pode atingir a velocidade da luz. À medida que um corpo se aproxima dessa velocidade, a energia necessária para continuar acelerando cresce exponencialmente, tornando impossível que qualquer partícula massiva atinja exatamente c. Apenas partículas sem massa, como os fótons, podem se mover à velocidade da luz.</p>
+    `
+  },
+  {
+    week: 1,
+    subject: "Física do Movimento",
+    context: "Sabendo que a percepção do tempo e da velocidade pode variar para diferentes observadores. Considere que um trem de **200 m** de comprimento se move a uma velocidade constante de **36 m/s** e está prestes a atravessar um túnel de **400 m** de comprimento. Um observador na estação deseja calcular o tempo total necessário para que o trem atravesse completamente o túnel. Além disso, um passageiro dentro do trem caminha do fundo para a frente do vagão a uma velocidade de **2 m/s** em relação ao trem.",
+    questionText: `Com base nessas informações, observe as afirmativas a seguir:
+    <br><br>
+    <strong>I.</strong> O tempo total necessário para que o trem atravesse completamente o túnel, segundo o observador na estação, é <strong>16,67 s</strong>.
+    <br>
+    <strong>II.</strong> O tempo necessário para que o passageiro, com sua velocidade atual segundo observador na estação, percorra uma extensão igual a do trem, é <strong>5,26 s</strong>.
+    <br>
+    <strong>III.</strong> Para o passageiro dentro do trem, o tempo para atravessar o túnel será menor do que o tempo medido pelo observador na estação.
+    <br>
+    <strong>IV.</strong> Na situação descrita, a velocidade do passageiro, quando analisada com relação ao observador na estação é <strong>38 m/s</strong>.
+    <br><br>
+    É correto o que se afirma em:`,
+    options: [
+      { letter: "A", text: "I e II, apenas.", isCorrect: false },
+      { letter: "B", text: "I, II, III e IV.", isCorrect: false },
+      { letter: "C", text: "I, III e IV, apenas.", isCorrect: false },
+      { letter: "D", text: "I, II e IV, apenas.", isCorrect: true },
+      { letter: "E", text: "II e IV, apenas.", isCorrect: false }
+    ],
+    correctExplanation: `
+      <p>A afirmativa <strong>I</strong> é correta, pois o tempo total necessário para que o trem atravesse completamente o túnel deve levar em conta o deslocamento total percorrido pela frente do trem até que a traseira saia completamente. Esse deslocamento total é a soma do comprimento do túnel (**400 m**) e do comprimento do trem (**200 m**), resultando em **600 m**. Utilizando a equação do tempo (&Delta;t = &Delta;s / v), e considerando que a velocidade do trem é **36 m/s**, encontramos que o tempo total necessário para a travessia completa é &Delta;t = &Delta;s / v = **600 m** / **36 m/s** = **16,67 s**, confirmando a veracidade da afirmativa.</p>
+
+      <p>A afirmativa <strong>II</strong> é correta, pois para calcular o tempo que o passageiro leva para percorrer uma extensão igual a do trem, ou seja, **200 m**. É necessário considerar que ele caminha a **2 m/s** em relação ao trem. No entanto, para um observador na estação, o passageiro tem uma velocidade resultante de **38 m/s** (soma da velocidade do trem e da velocidade relativa do passageiro), e o tempo necessário para percorrer **200 m** será de &Delta;t = 200 / 38 = **5,26 s**, confirmando a validade da afirmativa.</p>
+
+      <p>A afirmativa <strong>IV</strong> é correta, pois a velocidade do passageiro em relação ao solo deve ser determinada pela soma vetorial da velocidade do trem (**36 m/s**) e da velocidade do passageiro em relação ao trem (**2 m/s**). Assim, a velocidade total do passageiro em relação à estação será **38 m/s**, confirmando que a afirmativa é verdadeira.</p>
+      <p class="final-answer">A resposta correta é: I, II e IV, apenas.</p>
+    `,
+    incorrectExplanations: `
+      <h4 class="incorrect-title">As demais alternativas estão incorretas:</h4>
+      <p>A afirmativa <strong>III</strong> é incorreta, pois o tempo para atravessar o túnel não é menor para o passageiro dentro do trem. Na mecânica clássica, o tempo é o mesmo para todos os passageiros dentro do trem, pois eles compartilham o mesmo referencial inercial do veículo. O tempo medido pelo passageiro será idêntico ao tempo medido por qualquer outro observador que esteja no mesmo referencial do trem, e não inferior ao tempo medido pelo observador na estação.</p>
     `
   },
   {
