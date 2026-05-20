@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado - Física</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <div class="header-controls">
+            <div class="left-controls">
+                <button id="reset-score" class="btn-reset">Zerar Placar</button>
+                <select id="subject-selector" class="week-selector">
+                    <!-- Opções geradas via JS -->
+                </select>
+                <select id="week-selector" class="week-selector">
+                    <!-- Opções geradas via JS -->
+                </select>
+                <div id="question-nav" class="question-nav">
+                    <!-- Botões numéricos serão gerados via JS -->
+                </div>
+            </div>
+            <div class="score-board">
+                <span class="score-item success">Acertos: <strong id="correct-count">0</strong></span>
+                <span class="score-item danger">Erros: <strong id="wrong-count">0</strong></span>
+            </div>
+        </div>
+
+        <div class="question-section">
+            <p class="context" id="context"></p>
+            <p class="question-text" id="question-text"></p>
+        </div>
+
+        <div class="options-section" id="options">
+            <!-- As opções serão carregadas dinamicamente -->
+        </div>
+
+        <div id="feedback-container" class="feedback-container hidden">
+            <div class="quiz-footer top-footer">
+                <button class="btn-next next-question-btn">Próxima Questão</button>
+            </div>
+            
+            <div id="feedback-message" class="feedback-message"></div>
+
+            <div class="official-explanation" id="official-explanation">
+                <!-- A explicação será carregada dinamicamente -->
+            </div>
+
+            <div class="quiz-footer">
+                <button class="btn-next next-question-btn">Próxima Questão</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
