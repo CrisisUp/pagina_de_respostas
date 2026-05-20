@@ -1,4 +1,8 @@
+import { allQuestions } from './data/index.js';
+
 document.addEventListener("DOMContentLoaded", () => {
+  const questions = allQuestions;
+
   // Elementos do DOM
   const contextEl = document.getElementById("context");
   const questionTextEl = document.getElementById("question-text");

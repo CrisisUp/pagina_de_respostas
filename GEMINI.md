@@ -2,13 +2,16 @@
 
 Este documento estabelece as normas técnicas, arquiteturais e pedagógicas para a manutenção e expansão deste simulado, agora evoluído para uma plataforma multidisplinária do curso de Engenharia de Computação.
 
-## 1. Arquitetura Multidisciplinar
+## 1. Arquitetura de Dados e Modularização
 
-- **Hierarquia de Dados**: O banco de questões em `questions.js` deve organizar o conteúdo por **Disciplina** (`subject`) e **Semana** (`week`).
-- **Navegação em Cascata**: A interface utiliza dois seletores no topo:
-  1. **Seletor de Disciplina**: Filtra as questões pela matéria (ex: "Física do Movimento", "Circuitos Digitais").
-  2. **Seletor de Semana**: Atualiza-se dinamicamente conforme as semanas disponíveis para a disciplina selecionada.
-- **Persistência de Sessão**: O progresso é salvo globalmente. A memória de respostas (`userAnswers`) utiliza o índice global da questão para garantir integridade mesmo ao trocar de filtros.
+Para garantir a escalabilidade e evitar arquivos gigantescos, o banco de questões segue uma estrutura estritamente modular:
+
+- **Organização de Pastas**: `data/[subject]/[subject].semana[XX].js` (ex: `data/fisica/fisica.semana01.js`).
+- **Padrão de Exportação**: Cada arquivo semanal deve exportar uma constante nomeada seguindo o padrão camelCase: `export const fisicaSemana01 = [...]`.
+- **Agregação em Cascata**:
+  1. Arquivos semanais são importados e exportados em `data/[subject]/index.js`.
+  2. Cada `index.js` de disciplina é importado em `data/index.js`, que exporta a constante global `allQuestions`.
+- **Placeholder**: Arquivos planejados para o futuro (ex: `semana07`) devem ser criados como arquivos vazios ou com um array vazio, mas registrados no `index.js` apenas quando possuírem conteúdo.
 
 ## 2. Padrões Pedagógicos (Obrigatório)
 
@@ -19,12 +22,30 @@ Este documento estabelece as normas técnicas, arquiteturais e pedagógicas para
 
 ## 3. Notação Científica e Matemática
 
-Para garantir o profissionalismo técnico, deve-se utilizar:
+Para garantir o profissionalismo técnico e evitar problemas de codificação, deve-se utilizar:
 
-- **Símbolos Técnicos**: Utilizar entidades HTML (ex: `&plusmn;`, `&approx;`, `&theta;`, `&Delta;`, `&part;`, `&nabla;`).
-- **Abreviações de Unidades**: Usar abreviações técnicas (ex: **mm**, **m/s**, **km**, **s**, **N**, **V**) sempre em **negrito**.
-- **Fórmulas**: Destaque com `<strong>`. Para módulos, use barras verticais e negrito (**|F|**).
-- **Subscritos e Sobrescritos**: Tags `<sub>` e `<sup>` para isótopos, potências e componentes vetoriais.
+### 3.1 Entidades HTML para Símbolos
+Sempre substitua caracteres especiais por suas entidades HTML:
+- `&theta;` (θ), `&Delta;` (Δ), `&approx;` (≈), `&oplus;` (⊕), `&sdot;` (⋅), `&times;` (×), `&part;` (∂), `&nabla;` (∇), `&radic;` (√), `&pi;` (π), `&omega;` (ω), `&alpha;` (α), `&tau;` (τ), `&rarr;` (→), `&ordm;` (º), `&deg;` (°).
+
+### 3.2 Unidades e Grandezas
+- **Negrito Obrigatório**: Todas as unidades técnicas devem estar entre `<strong>`.
+- **Espaçamento**: Deve haver um espaço entre o valor numérico e a unidade (ex: `10 <strong>m/s</strong>`).
+- **Lista de Unidades**: `m/s`, `rad/s`, `km`, `mm`, `kg`, `bits`, `bytes`, `MB`, `GB`, `Hz`, `N`, `V`, `J`, `W`, `A`, `m`, `s`.
+- **Fórmulas e Módulos**: Destaque com `<strong>`. Módulos de vetores devem ser `<strong>|F|</strong>`.
+- **Subscritos e Sobrescritos**: Use `<sub>` e `<sup>`.
+
+### 3.3 Palavras-Chave de Programação
+- Em disciplinas de computação (ex: Circuitos Digitais), palavras-chave de linguagens (VHDL, C) como `entity`, `architecture`, `if`, `then` devem ser formatadas com `<strong>`.
+
+## 4. Manutenção e Higiene de Código
+
+- **Scripts de Correção**: O projeto conta com `standardize.js` e `fix_tags.js`. Eles devem ser executados após grandes adições de dados para garantir:
+  - Conversão automática de símbolos para entidades.
+  - Aplicação de negrito em unidades.
+  - Remoção de tags redundantes (ex: `<strong><strong>`) ou vazias.
+  - Balanceamento de tags `<strong>`.
+- **Persistência de Sessão**: A memória de respostas (`userAnswers`) utiliza o índice global da questão (`questions.indexOf(q)`) para garantir integridade. Nunca altere a ordem das questões em arquivos antigos para não corromper o progresso dos usuários.
 
 ## 5. Estrutura do Objeto de Questão (`questions.js`)
 
