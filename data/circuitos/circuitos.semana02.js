@@ -40,7 +40,7 @@ export const circuitosSemana02 = [
 
         <!-- AND Gate (A.(B'+C')) -->
         <g transform="translate(240, 35)" fill="#cbd5e1" stroke="#64748b" stroke-width="2">
-          <path d="M 0,0 L 15,0 <strong>A</strong> 15,15 0 0 1 15,30 L 0,30 Z" />
+          <path d="M 0,0 L 15,0 A 15,15 0 0 1 15,30 L 0,30 Z" />
         </g>
         <circle cx="40" cy="45" r="3" fill="#64748b" />
         <line x1="40" y1="45" x2="240" y2="45" stroke="#64748b" stroke-width="2" />
@@ -54,7 +54,7 @@ export const circuitosSemana02 = [
 
         <!-- AND Gate (B.C) -->
         <g transform="translate(110, 135)" fill="#cbd5e1" stroke="#64748b" stroke-width="2">
-          <path d="M 0,0 L 15,0 <strong>A</strong> 15,15 0 0 1 15,30 L 0,30 Z" />
+          <path d="M 0,0 L 15,0 A 15,15 0 0 1 15,30 L 0,30 Z" />
         </g>
         
         <!-- NOT Gate ((B.C)') -->
@@ -93,11 +93,31 @@ export const circuitosSemana02 = [
     <br><br>
     A respeito dessas asserções, assinale a alternativa correta:`,
     options: [
-      { letter: "A", text: "As asserções <strong>I</strong> e <strong>II</strong> são falsas.", isCorrect: false },
-      { letter: "B", text: "A asserção <strong>I</strong> é uma proposição verdadeira, e a <strong>II</strong> é uma proposição falsa.", isCorrect: false },
-      { letter: "C", text: "A asserção <strong>I</strong> é uma proposição falsa, e a <strong>II</strong> é uma proposição verdadeira.", isCorrect: false },
-      { letter: "D", text: "As asserções <strong>I</strong> e <strong>II</strong> são proposições verdadeiras, e a <strong>II</strong> é uma justificativa da <strong>I</strong>.", isCorrect: true },
-      { letter: "E", text: "As asserções <strong>I</strong> e <strong>II</strong> são proposições verdadeiras, mas a <strong>II</strong> não é uma justificativa da <strong>I</strong>.", isCorrect: false }
+      {
+        letter: "A",
+        text: "As asserções I e II são falsas.",
+        isCorrect: false,
+      },
+      {
+        letter: "B",
+        text: "A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        isCorrect: false,
+      },
+      {
+        letter: "C",
+        text: "A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        isCorrect: false,
+      },
+      {
+        letter: "D",
+        text: "As asserções I e II são proposições verdadeiras, e a II é uma justificativa da I.",
+        isCorrect: true,
+      },
+      {
+        letter: "E",
+        text: "As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa da I.",
+        isCorrect: false,
+      },
     ],
     correctExplanation: `
       <p>A asserção <strong>I</strong> é uma proposição verdadeira, pois o circuito equivale à seguinte expressão em álgebra booleana: <strong>S = A &sdot; (B&apos; + C&apos;) + (B &sdot; C)&apos;</strong>. Ao analisar esta expressão e aplicar os teoremas adequados, ela se torna significativamente mais simples, resultando em <strong>(B &sdot; C)&apos;</strong>.</p>
@@ -120,7 +140,7 @@ export const circuitosSemana02 = [
           <line x1="35" y1="40" x2="70" y2="40" stroke="#64748b" stroke-width="2" />
           <line x1="35" y1="80" x2="70" y2="80" stroke="#64748b" stroke-width="2" />
           <g transform="translate(70, 35)" fill="#cbd5e1" stroke="#64748b" stroke-width="2">
-            <path d="M 0,0 L 25,0 <strong>A</strong> 25,25 0 0 1 25,50 L 0,50 Z" />
+            <path d="M 0,0 L 25,0 A 25,25 0 0 1 25,50 L 0,50 Z" />
             <circle cx="29" cy="25" r="4" fill="#f8fafc" />
           </g>
           <line x1="103" y1="60" x2="140" y2="60" stroke="#64748b" stroke-width="2" />
@@ -133,7 +153,7 @@ export const circuitosSemana02 = [
     incorrectExplanations: `
       <h4 class="incorrect-title">As demais alternativas estão incorretas:</h4>
       <p>Ambas as asserções são verdadeiras e possuem uma relação direta de causa e consequência. A asserção <strong>I</strong> propõe a simplificação do circuito para uma porta <strong>NAND</strong> de duas entradas (<strong>B</strong> e <strong>C</strong>), o que é matematicamente validado pela demonstração algébrica apresentada na asserção <strong>II</strong> utilizando o Teorema de <strong>De Morgan</strong> e as propriedades da álgebra booleana (como a identidade <strong>A + 1 = 1</strong>). Portanto, qualquer alternativa que negue a veracidade das asserções ou a relação de justificativa entre elas está incorreta.</p>
-    `
+    `,
   },
   {
     week: 2,
@@ -165,13 +185,34 @@ export const circuitosSemana02 = [
       </table>
     </div>
     <p style="font-size: 0.85rem; color: #64748b;"><strong>Figura 2: Exemplo de descrição de hardware usando VHDL.</strong><br>Fonte: Elaborado pelo autor</p>`,
-    questionText: "Os termos <strong>[preencher 1]</strong>, <strong>[preencher 2]</strong> e <strong>[preencher 3]</strong> são corretamente substituídos por:",
+    questionText:
+      "Os termos <strong>[preencher 1]</strong>, <strong>[preencher 2]</strong> e <strong>[preencher 3]</strong> são corretamente substituídos por:",
     options: [
-      { letter: "A", text: "1 - architecture; 2 - in; 3 - entity", isCorrect: false },
-      { letter: "B", text: "1 - entity; 2 - in; 3 - architecture", isCorrect: true },
-      { letter: "C", text: "1 - entity; 2 - out; 3 - architecture", isCorrect: false },
-      { letter: "D", text: "1 - entity; 2 - out; 3 - and_gate", isCorrect: false },
-      { letter: "E", text: "1 - architecture; 2 - out; 3 - entity", isCorrect: false }
+      {
+        letter: "A",
+        text: "1 - architecture; 2 - in; 3 - entity",
+        isCorrect: false,
+      },
+      {
+        letter: "B",
+        text: "1 - entity; 2 - in; 3 - architecture",
+        isCorrect: true,
+      },
+      {
+        letter: "C",
+        text: "1 - entity; 2 - out; 3 - architecture",
+        isCorrect: false,
+      },
+      {
+        letter: "D",
+        text: "1 - entity; 2 - out; 3 - and_gate",
+        isCorrect: false,
+      },
+      {
+        letter: "E",
+        text: "1 - architecture; 2 - out; 3 - entity",
+        isCorrect: false,
+      },
     ],
     correctExplanation: `
       <p>A alternativa <strong>"1 - entity; 2 - in; 3 - <strong>architecture</strong>."</strong> está correta, pois o primeiro bloco de comandos do arquivo <strong>VHDL</strong> diz respeito a <strong>"entidade"</strong>, preenchido com <strong>"<strong>entity</strong>"</strong> e que especifica por exemplo os sinais de entrada e saída. As entradas neste bloco, no caso os sinais <strong>A</strong>, <strong>B</strong> e <strong>C</strong> são de entradas por isso a segunda lacuna deve ser preenchida com <strong>"in"</strong>. O segundo bloco do arquivo <strong>VHDL</strong> diz respeito à arquitetura do dispositivo com o seu funcionamento e por isso ele começa com o <strong>"<strong>architecture</strong>"</strong> preenchido na lacuna 3. As outras alternativas usam estes termos mas em outras partes do arquivo que não correspondem a cada uma destas especificações.</p>
@@ -183,19 +224,40 @@ export const circuitosSemana02 = [
       <p>A alternativa <strong>"1 - architecture; 2 - in; 3 - <strong>entity</strong>."</strong> está incorreta pois os preenchimentos da lacuna 1 com <strong>"<strong>architecture</strong>"</strong> e da lacuna 3 <strong>"<strong>entity</strong>"</strong> estão invertidos. A lacuna 1 com <strong>"<strong>architecture</strong>"</strong> inicia um bloco que trata na verdade da entidade, portanto deveria estar preenchida com <strong>"<strong>entity</strong>"</strong>. Por outro lado, a lacuna 3 com <strong>"<strong>entity</strong>"</strong> inicia um bloco de arquitetura portanto deveria estar preenchida com <strong>"<strong>architecture</strong>"</strong>. O outro preenchimento está correto, <strong>"in"</strong> para indicar os sinais de entrada <strong>A</strong>, <strong>B</strong> e <strong>C</strong>.</p>
       <p>A alternativa <strong>"1 - entity; 2 - out; 3 - and_gate"</strong> está incorreta pois na lacuna 2 os sinais de entrada deveriam ser especificados com <strong>"in"</strong> em vez de <strong>"out"</strong>. Além disso, o termo da lacuna 3 com <strong>"and_gate"</strong> está errado, como trata-se do início do bloco de arquitetura, deveria ser preenchido com <strong>"<strong>architecture</strong>"</strong>. Vale notar que o nome <strong>"and_gate"</strong> do bloco arquitetura já aparece no arquivo. O outro preenchimento está correto, <strong>"<strong>entity</strong>"</strong> de fato inicia um bloco para especificar a entidade.</p>
       <p>A alternativa <strong>"1 - architecture; 2 - out; 3 - <strong>entity</strong>."</strong> está incorreta, pois todos os preenchimentos estão errados. A lacuna 1 que inicia um bloco entidade deveria ser <strong>"<strong>entity</strong>"</strong> e não <strong>"<strong>architecture</strong>"</strong>. Na lacuna 2, os sinais de entrada deveriam ser preenchidos com <strong>"in"</strong> em vez de <strong>"out"</strong>. Na lacuna 3, o bloco de arquitetura deveria ser iniciado com <strong>"<strong>architecture</strong>"</strong> e não com <strong>"<strong>entity</strong>"</strong>.</p>
-    `
+    `,
   },
   {
     week: 2,
     subject: "Circuitos Digitais",
-    context: "O funcionamento das portas lógicas pode ser compreendido por meio do uso de circuitos com chaves e cada porta pode ter uma representação via um símbolo algébrico. Por exemplo, quando chaves são colocadas em <strong>série</strong> ou em <strong>paralelo</strong> elas possuem um comportamento de determinada porta e a depender da porta, ela pode ser representada, por exemplo, por um símbolo aritmético ou algébrico.<br><br>Com base no apresentado, assinale a alternativa que reconhece a correlação entre circuito com chaves, portas e seus respectivos símbolos algébricos.",
+    context:
+      "O funcionamento das portas lógicas pode ser compreendido por meio do uso de circuitos com chaves e cada porta pode ter uma representação via um símbolo algébrico. Por exemplo, quando chaves são colocadas em <strong>série</strong> ou em <strong>paralelo</strong> elas possuem um comportamento de determinada porta e a depender da porta, ela pode ser representada, por exemplo, por um símbolo aritmético ou algébrico.<br><br>Com base no apresentado, assinale a alternativa que reconhece a correlação entre circuito com chaves, portas e seus respectivos símbolos algébricos.",
     questionText: "Assinale a alternativa correta:",
     options: [
-      { letter: "A", text: "um circuito com duas chaves ligadas em <strong>paralelo</strong> é equivalente a uma porta <strong>AND</strong> representada pelo símbolo de <strong>\".\"</strong>.", isCorrect: false },
-      { letter: "B", text: "um circuito com duas chaves ligadas em <strong>paralelo</strong> é equivalente a uma porta <strong>OR</strong> representada pelo símbolo de <strong>\"+\"</strong>.", isCorrect: true },
-      { letter: "C", text: "um circuito com duas chaves ligadas em <strong>série</strong> é equivalente a uma porta <strong>OR</strong> representada pelo símbolo <strong>\"&oplus;\"</strong>.", isCorrect: false },
-      { letter: "D", text: "um circuito com duas chaves ligadas em <strong>série</strong> é equivalente a uma porta <strong>NOT</strong> representada pelo símbolo <strong>\"&oplus;\"</strong>.", isCorrect: false },
-      { letter: "E", text: "um circuito com duas chaves ligadas em <strong>paralelo</strong> é equivalente a uma porta <strong>AND</strong> representada pelo símbolo de <strong>\"+\"</strong>.", isCorrect: false }
+      {
+        letter: "A",
+        text: 'um circuito com duas chaves ligadas em paralelo é equivalente a uma porta AND representada pelo símbolo de "."',
+        isCorrect: false,
+      },
+      {
+        letter: "B",
+        text: 'um circuito com duas chaves ligadas em paralelo é equivalente a uma porta OR representada pelo símbolo de "+"',
+        isCorrect: true,
+      },
+      {
+        letter: "C",
+        text: 'um circuito com duas chaves ligadas em série é equivalente a uma porta AND representada pelo símbolo "."',
+        isCorrect: false,
+      },
+      {
+        letter: "D",
+        text: 'um circuito com duas chaves ligadas em série é equivalente a uma porta NOT representada pelo símbolo "&oplus;"',
+        isCorrect: false,
+      },
+      {
+        letter: "E",
+        text: 'um circuito com duas chaves ligadas em paralelo é equivalente a uma porta AND representada pelo símbolo de "+"',
+        isCorrect: false,
+      },
     ],
     correctExplanation: `
       <p>A alternativa <strong>"um circuito com duas chaves ligadas em paralelo é equivalente a uma porta OR representada pelo símbolo de \"+\""</strong> está correta pois o circuito ativará uma saída quando uma ou outra chave estiver ligada que é justamente o funcionamento da porta <strong>OR</strong>. Além disso, de fato o símbolo desta porta é o <strong>"+"</strong>.</p>
@@ -207,6 +269,6 @@ export const circuitosSemana02 = [
       <p>A alternativa <strong>"um circuito com duas chaves ligadas em série é equivalente a uma porta NOT representada pelo símbolo \"&oplus;\""</strong> está incorreta pois duas chaves ligadas em <strong>série</strong> equivalem a porta <strong>AND</strong>, pois o circuito completo só é ativado quando as duas chaves simultaneamente estiverem ligadas. Além disso, a porta <strong>NOT</strong> tratada na alternativa é uma porta que faz a inversão ou complemento de uma entrada, por exemplo, ao receber um sinal 1 a porta gera sinal 0 e vice-versa. Portanto, a porta <strong>NOT</strong> atua somente a uma entrada e isso seria equivalente a um circuito com apenas uma chave. O símbolo da porta <strong>NOT</strong> é uma barra acima da variável.</p>
       <p>A alternativa <strong>"um circuito com duas chaves ligadas em paralelo é equivalente a uma porta AND representada pelo símbolo de \"+\""</strong> está incorreta pois duas chaves ligadas em <strong>paralelo</strong> funcionam como uma porta <strong>OR</strong>. Isso porque com duas chaves em <strong>paralelo</strong>, o circuito será ativado, energizará a saída quando uma chave ou outra estiver ligada que é justamente o funcionamento da porta <strong>OR</strong>. Além disso, outro erro na afirmativa é que o símbolo da porta <strong>AND</strong> é <strong>"."</strong>.</p>
       <p>A alternativa <strong>"um circuito com duas chaves ligadas em paralelo é equivalente a uma porta AND representada pelo símbolo de \".\""</strong> está incorreta pois, apesar da porta <strong>AND</strong> ter um símbolo de <strong>"."</strong>, duas chaves em <strong>paralelo</strong> funcionam como uma porta <strong>OR</strong> e não como uma porta <strong>AND</strong>. Isso porque com duas chaves em <strong>paralelo</strong>, o circuito será ativado, isto é, energizará a saída quando uma chave ou outra estiver ligada que é justamente o funcionamento da porta <strong>OR</strong>.</p>
-    `
-  }
+    `,
+  },
 ];
